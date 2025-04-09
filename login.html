@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,23 +96,28 @@
         </div>
         <button class="login-btn" onclick="checkPassword()">Zaloguj się</button>
     </div>
-   <script>
-    function checkPassword() {
-        const password = document.getElementById('password').value;
-        const error = document.getElementById('error');
-        
-        if (password === "qwerty1234") { // <- tu Twoje nowe hasło
-            window.location.href = 'index.html';
-        } else {
-            error.style.display = 'block';
-        }
-    }
+    
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const error = document.getElementById('error');
 
-    // Dynamiczny tekst powitalny
-    const hour = new Date().getHours();
-    if (hour >= 18) {
-        document.querySelector('.welcome').textContent = 'Dobry wieczór!';
-    }
-</script>
+            // Tu wpisz swoje hasło:
+            const correctPassword = "tajne123";
+
+            if (password === correctPassword) {
+                // Symulacja logowania - przeniesienie na inną stronę
+                window.location.href = 'index.html';
+            } else {
+                error.style.display = 'block';
+            }
+        }
+
+        // Zmienny tekst powitalny
+        const hour = new Date().getHours();
+        if (hour >= 18) {
+            document.querySelector('.welcome').textContent = 'Dobry wieczór!';
+        }
+    </script>
 </body>
 </html>
