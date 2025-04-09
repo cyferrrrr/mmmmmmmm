@@ -96,24 +96,21 @@
         </div>
         <button class="login-btn" onclick="checkPassword()">Zaloguj się</button>
     </div>
-    
     <script>
+        const correctPassword = "tajne123"; // ← zmień na swoje hasło
+
         function checkPassword() {
             const password = document.getElementById('password').value;
             const error = document.getElementById('error');
 
-            // Tu wpisz swoje hasło:
-            const correctPassword = "tajne123";
-
             if (password === correctPassword) {
-                // Symulacja logowania - przeniesienie na inną stronę
-                window.location.href = 'index.html';
+                alert("Zalogowano!");
+                // window.location.href = 'index.html'; // możesz odkomentować jeśli masz index.html
             } else {
                 error.style.display = 'block';
             }
         }
 
-        // Zmienny tekst powitalny
         const hour = new Date().getHours();
         if (hour >= 18) {
             document.querySelector('.welcome').textContent = 'Dobry wieczór!';
